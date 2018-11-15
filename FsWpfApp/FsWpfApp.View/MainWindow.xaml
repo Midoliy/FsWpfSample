@@ -1,0 +1,17 @@
+﻿<Window x:Class="FsWpfApp.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:FsWpfApp.ViewModels;assembly=FsWpfApp.ViewModels"
+        Title="MainWindow" Height="270" Width="310">
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
+    <StackPanel>
+        <TextBox Text="{Binding Path=Lhs.Value}" />
+        <TextBlock Text="＋" />
+        <TextBox Text="{Binding Path=Rhs.Value}" />
+        <TextBlock Text="＝" />
+        <TextBlock Text="{Binding Path=Answer.Value}" />
+        <Button Content="計算" Command="{Binding Path=CalcCommand}" />
+    </StackPanel>
+</Window>
